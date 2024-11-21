@@ -23,6 +23,29 @@ npm install unit-converter
 
 Import converter functions and convert values between units.
 
+
+### Mass conversions
+convert mass/weight convert
+
+```typescript
+function exampleUsage() {
+	// Convert 5 pounds to kilograms
+	const kgValue = convertMass(5, 'lb', 'kg');
+	console.log('5 pounds is', kgValue, 'kilograms');
+
+	// Using convenience methods
+	const ozToGrams = MassConverter.ouncesToGrams(10);
+	console.log('10 ounces is', ozToGrams, 'grams');
+}
+```
+
+### Temperature conversions
+
+
+
+
+
+
 ### Length Conversion
 
 Convert between units of length such as meters, miles, feet, and more:
@@ -46,13 +69,17 @@ const ounces = convertWeight(1, 'pound', 'ounce'); // 16 ounces
 
 ### Volume Conversion
 
-Handle volume conversions like liters, gallons, and quarts:
+Convert between various volume units such as UK Gallons, US Gallons, Liters (Litres), and more. The converter accepts both American and British English spellings.
 
 ```typescript
 import { convertVolume } from 'unit-converter';
 
-const gallons = convertVolume(3, 'liter', 'gallon'); // 0.792516 gallons
-const liters = convertVolume(1, 'gallon', 'liter'); // 3.78541 liters
+const usGallons = convertVolume(10, 'liter', 'us_gallon'); // Output: 2.64172 US gallons
+const ukGallons = convertVolume(10, 'litre', 'uk_gallon'); // Output: 2.19969 UK gallons
+const cubicFeet = convertVolume(1000, 'liter', 'cubic_foot'); // Output: 35.3147 cubic feet
+const cubicInches = convertVolume(1, 'cubic_foot', 'cubic_inch'); // Output: 1728 cubic inches
+const milliliters = convertVolume(1, 'liter', 'millilitre'); // Output: 1000 milliliters
+const gallons = convertVolume(10, 'liter', 'gallon'); // Output: 2.64172 (interpreted as US gallons)
 ```
 
 ### Area Conversion
@@ -82,8 +109,20 @@ const squareFeet = convertArea(1, 'acre', 'square_foot'); // Output: 43560 squar
 
 ### Volume Units
 
-- Metric: liter
-- US Customary: gallon, quart
+- Metric:
+
+  - liter
+  - milliliter / millilitre
+  - cubic_centimeter
+  - cubic_meter / cubic_metre
+
+- Imperial/US Customary:
+
+  - gallon (interpreted as US gallon by default), us_gallon
+  - uk_gallon
+  - cubic_inch
+  - cubic_foot,
+  - quart
 
 ### Area Units
 
@@ -112,7 +151,7 @@ Converts a weight value between supported units.
 
 ### convertVolume(value: number, from: string, to: string): number
 
-Converts a volume value between supported units.
+Convert between various volume units such as UK Gallons, US Gallons, Liters (Litres), and more. The converter accepts both American and British English spellings.
 
 - **value**: The numerical value to convert.
 - **from**: The source unit.

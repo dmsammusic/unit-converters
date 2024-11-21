@@ -1,12 +1,19 @@
-const weightConversions = {
-	kilogram: { pound: 2.20462, ounce: 35.274 },
-	pound: { kilogram: 0.453592, ounce: 16 },
-	ounce: { kilogram: 0.0283495, pound: 0.0625 },
+declare const weightConversions: {
+    kilogram: {
+        pound: number;
+        ounce: number;
+    };
+    pound: {
+        kilogram: number;
+        ounce: number;
+    };
+    ounce: {
+        kilogram: number;
+        pound: number;
+    };
 };
-
 type TFrom = keyof typeof weightConversions;
 type TTo = keyof typeof weightConversions;
-
 /**
  * Converts a value from one unit of weight to another.
  *
@@ -21,9 +28,5 @@ type TTo = keyof typeof weightConversions;
  * @returns {number} The converted value
  * @throws {Error} If the conversion is not supported
  */
-export function convertWeight(value: number, from: TFrom, to: TTo): number {
-	if (from === to) return value;
-	const conversionRate = weightConversions[from][to as keyof (typeof weightConversions)[TFrom]];
-	if (!conversionRate) throw new Error(`Conversion from ${from} to ${to} not supported.`);
-	return value * conversionRate;
-}
+export declare function convertWeight(value: number, from: TFrom, to: TTo): number;
+export {};
