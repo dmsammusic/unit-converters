@@ -1,5 +1,5 @@
 {
-	"name": "unit-converter",
+	"name": "unit-transformer",
 	"version": "1.0.0",
 	"description": "unit converter for si to metric and metric to si",
 	"main": "main.js",
