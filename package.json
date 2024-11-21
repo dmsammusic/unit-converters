@@ -11,8 +11,13 @@
 	},
 	"keywords": [
 		"unit-converters",
-		"si-metric-converter",
-		"metric-si-converter"
+		"temp-converter",
+		"speed-converter",
+		"weight-converter",
+		"mass-converter",
+		"time-converter",
+		"length-converter",
+		"volume-converter"
 	],
 	"author": "Sam M",
 	"license": "ISC",
