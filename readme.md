@@ -14,7 +14,7 @@
 Install via npm:
 
 ```bash
-npm install unit-converter
+npm install unit-transformer
 ```
 
 ---
