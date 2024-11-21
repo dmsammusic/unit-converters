@@ -1,0 +1,29 @@
+{
+	"name": "unit-converter",
+	"version": "1.0.0",
+	"description": "unit converter for si to metric and metric to si",
+	"main": "main.js",
+	"scripts": {
+		"build": "tsc && npm run clean",
+		"clean": "rm -rf dist/*.map dist/jest.config.js",
+		"test": "jest",
+		"prepublishOnly": "npm run build && npm test"
+	},
+	"keywords": [
+		"unit-converters",
+		"si-metric-converter",
+		"metric-si-converter"
+	],
+	"author": "Sam M",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/jest": "^29.5.14",
+		"jest": "^29.7.0",
+		"ts-jest": "^29.2.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	},
+	"files": [
+		"dist"
+	]
+}
