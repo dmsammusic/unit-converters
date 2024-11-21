@@ -92,4 +92,5 @@ jspm_packages/
 # Serverless Webpack directories
 .webpack/
 
-
+# build / generate output
+dist
